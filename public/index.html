@@ -2,23 +2,27 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Rock Paper Scissors</title>
+    <title>Rock Paper Scissors Lizard Spock</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script type="text/javascript" src="scripts.js"></script>
 </head>
 <body>
-<h1>Rock Paper Scissors</h1>
+<h1>Rock Paper Scissors Lizard Spock</h1>
 <div id="game">
-    <div id="player-select">
-        <h2>Choose your move:</h2>
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
-        <button id="spock">Spock</button>
-        <button id="lizard">Lizard</button>
+    <div class="options">
+        <button id="rock" onclick="play('rock')">Rock</button>
+        <button id="paper" onclick="play('paper')">Paper</button>
+        <button id="scissors" onclick="play('scissors')">Scissors</button>
+        <button id="lizard" onclick="play('lizard')">Lizard</button>
+        <button id="spock" onclick="play('spock')">Spock</button>
     </div>
-    <div id="result"></div>
-    <button id="reset">Reset</button>
+    <div class="results">
+        <p id="player-choice"></p>
+        <p id="computer-choice"></p>
+        <p id="result"></p>
+    </div>
+    <button id="reset" onclick="reset()">Reset</button>
 </div>
-<script src="scripts.js"></script>
 </body>
 </html>
+
