@@ -1,55 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8">
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-<header>
-    <h1>Rock Paper Scissors</h1>
-</header>
-<main>
-    <section id="game">
-        <h2>Select game type:</h2>
-        <div class="game-type">
-            <label for="rps">Rock Paper Scissors</label>
-            <input type="radio" id="rps" name="game-type" value="rps" checked />
-        </div>
-        <div class="game-type">
-            <label for="rpsls">Rock Paper Scissors Lizard Spock</label>
-            <input type="radio" id="rpsls" name="game-type" value="rpsls" />
-        </div>
-        <h2>Select opponent:</h2>
-        <div class="opponent">
-            <label for="random">Random</label>
-            <input type="radio" id="random" name="opponent" value="random" checked />
-        </div>
-        <div class="opponent">
-            <label for="human">Human</label>
-            <input type="radio" id="human" name="opponent" value="human" />
-        </div>
-        <div class="opponent">
-            <label for="computer">Computer</label>
-            <input type="radio" id="computer" name="opponent" value="computer" />
-        </div>
-        <div id="play">
-            <button id="play-button">Play</button>
-        </div>
-        <div id="reset">
-            <button id="reset-button">Reset</button>
-        </div>
-    </section>
-    <section id="result" class="hidden">
-        <h2>Result:</h2>
-        <p id="result-message"></p>
-        <div id="play-again">
-            <button id="play-again-button">Play Again</button>
-        </div>
-    </section>
-</main>
+<h1>Rock Paper Scissors</h1>
+<div id="game">
+    <div id="player-select">
+        <h2>Choose your move:</h2>
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+        <button id="spock">Spock</button>
+        <button id="lizard">Lizard</button>
+    </div>
+    <div id="result"></div>
+    <button id="reset">Reset</button>
+</div>
 <script src="scripts.js"></script>
 </body>
 </html>
