@@ -1,35 +1,40 @@
-const API_URL = 'https://your-api-url.com';
+function toggleShots() {
+    const checkbox = document.getElementById('opponent');
+    const radios = document.getElementById('rps');
 
-function play(playerMove, opponent) {
-  const endpoint = `/app/play/${playerMove}/${opponent}`;
-  return fetch(API_URL + endpoint)
-    .then(response => response.json());
+    if (checkbox.checked) {
+        $('.shots').show();
+        if (radios.checked) {
+            $('.rpsls').hide();
+        }
+    } else {
+        $('.shots').hide();
+    }
 }
 
-function playRPS(playerMove) {
-  const endpoint = `/app/play/rps/${playerMove}`;
-  return fetch(API_URL + endpoint)
-    .then(response => response.json());
-}
-
-function playRPSLS(playerMove) {
-  const endpoint = `/app/play/rpsls/${playerMove}`;
-  return fetch(API_URL + endpoint)
-    .then(response => response.json());
+async function play() {
+    const checkbox = document.getElementById('opponent');
+    const game = $('input[type=radio][name=game]:checked').val();
+    let shot = '';
+    if (checkbox.checked) {
+        shot = $('input[type=radio][name=shot]:checked').val() + '/';
+    }
+    const base = window.location.href + 'app/';
+    const url = base + game + '/play/' + shot;
+    const response = await fetch(url);
+    const results = await response.json();
+    const resultElement = document.getElementById('result');
+    if (!checkbox.checked) {
+        resultElement.innerHTML = results.player;
+    } else {
+        resultElement.innerHTML = 'You: ' + results.player + '. Your opponent: ' + results.opponent + '. Result: You ' + results.result + "!";
+    }
 }
 
 function reset() {
-  document.getElementById('result').innerHTML = '';
-  document.getElementById('player-select').style.display = 'block';
+    location.reload();
 }
 
-document.querySelectorAll('#player-select button').forEach(button => {
-  button.addEventListener('click', async () => {
-    document.getElementById('player-select').style.display = 'none';
-    const opponent = await play('random');
-    const result = await playRPSLS(button.id, opponent.move);
-    document.getElementById('result').innerHTML = result;
-  });
-});
 
-document.getElementById('reset').addEventListener('click', reset);
+
+
