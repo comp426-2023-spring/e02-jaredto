@@ -1,12 +1,55 @@
-<html>
-    <head>
-        <title>Rock</title>
-        <!-- Link to your script file(s) and CSS in here somewhere -->
-    </head>
-    <body>
-
-    <!-- Your interface markup goes here -->
-    <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
-
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+    <h1>Rock Paper Scissors</h1>
+</header>
+<main>
+    <section id="game">
+        <h2>Select game type:</h2>
+        <div class="game-type">
+            <label for="rps">Rock Paper Scissors</label>
+            <input type="radio" id="rps" name="game-type" value="rps" checked />
+        </div>
+        <div class="game-type">
+            <label for="rpsls">Rock Paper Scissors Lizard Spock</label>
+            <input type="radio" id="rpsls" name="game-type" value="rpsls" />
+        </div>
+        <h2>Select opponent:</h2>
+        <div class="opponent">
+            <label for="random">Random</label>
+            <input type="radio" id="random" name="opponent" value="random" checked />
+        </div>
+        <div class="opponent">
+            <label for="human">Human</label>
+            <input type="radio" id="human" name="opponent" value="human" />
+        </div>
+        <div class="opponent">
+            <label for="computer">Computer</label>
+            <input type="radio" id="computer" name="opponent" value="computer" />
+        </div>
+        <div id="play">
+            <button id="play-button">Play</button>
+        </div>
+        <div id="reset">
+            <button id="reset-button">Reset</button>
+        </div>
+    </section>
+    <section id="result" class="hidden">
+        <h2>Result:</h2>
+        <p id="result-message"></p>
+        <div id="play-again">
+            <button id="play-again-button">Play Again</button>
+        </div>
+    </section>
+</main>
+<script src="scripts.js"></script>
+</body>
 </html>
